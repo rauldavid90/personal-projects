@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="460.0" prefWidth="960.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.socialnetworkgui.ChatwindowController">
+    <ScrollPane fx:id="scrollPane" layoutX="0" layoutY="0" prefHeight="400" prefWidth="960.0">
+        <content>
+            <Pane fx:id="chatPane">
+                <VBox fx:id="chatWindow" fillWidth="false" prefHeight="398.0" prefWidth="975.0" />
+            </Pane>
+        </content>
+    </ScrollPane>
+    <TextField fx:id="textField" layoutX="150.0" layoutY="419.0" prefHeight="26.0" prefWidth="657.0" promptText="New message" />
+    <Button fx:id="sendButton" layoutX="842.0" layoutY="419.0" mnemonicParsing="false" onAction="#send" prefWidth="100" text="Send" />
+    <Button fx:id="backButton" layoutX="14.0" layoutY="419.0" mnemonicParsing="false" onAction="#back" prefWidth="100" text="Cancel" />
+</AnchorPane>

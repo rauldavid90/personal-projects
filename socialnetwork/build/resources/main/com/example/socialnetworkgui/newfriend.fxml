@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="460.0" prefWidth="960.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.socialnetworkgui.NewFriendController">
+
+    <TableView fx:id="tableViewUsers" layoutX="14.0" layoutY="14" prefHeight="314.0" prefWidth="329.0">
+        <columns>
+            <TableColumn fx:id="tableColumnId" prefWidth="101.60000610351562" text="Username" />
+            <TableColumn fx:id="tableColumnFirstName" prefWidth="119.199951171875" text="First name" />
+            <TableColumn fx:id="tableColumnLastName" prefWidth="107.19997558593752" text="Last name" />
+        </columns>
+    </TableView>
+    <Label layoutX="523.0" layoutY="41.0" text="Search:">
+    </Label>
+    <TextField fx:id="textFieldFilter" layoutX="592.0" layoutY="39.0" prefHeight="26.0" prefWidth="142.0" />
+    <Button layoutX="592.0" layoutY="88.0" mnemonicParsing="false" onAction="#sendRequest" prefHeight="26.0" prefWidth="142.0" text="Send friend request">
+    </Button>
+    <Button fx:id="backButton" layoutX="14.0" layoutY="419.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="64.0" text="Cancel">
+    </Button>
+</AnchorPane>

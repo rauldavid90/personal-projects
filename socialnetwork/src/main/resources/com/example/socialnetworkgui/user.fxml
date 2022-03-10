@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="460.0" prefWidth="960.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.socialnetworkgui.UserController">
+   <children>
+      <StackPane layoutX="185.0" layoutY="25.0" prefHeight="403.0" prefWidth="728.0">
+         <children>
+            <GridPane fx:id="paneMessages" style="-fx-background-color: #673d9c;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="327.0" layoutY="190.0" text="Chatroom" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+            <GridPane fx:id="paneEvents" style="-fx-background-color: #673d9c;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <AnchorPane maxHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="763.0">
+                     <children>
+                        <TextField fx:id="textFieldEventTime" layoutX="15.0" layoutY="117.0" prefHeight="26.0" prefWidth="144.0" promptText="time" />
+                        <DatePicker fx:id="datePickerEventDate" layoutX="15.0" layoutY="81.0" prefHeight="26.0" prefWidth="144.0" promptText="date" />
+                        <TextField fx:id="textFieldEventName" layoutX="15.0" layoutY="14.0" prefHeight="26.0" prefWidth="144.0" promptText="name" />
+                        <TextField fx:id="textFieldEventDescription" layoutX="15.0" layoutY="47.0" prefHeight="26.0" prefWidth="144.0" promptText="description" />
+                        <Button fx:id="btnAddEvent" layoutX="173.0" layoutY="60.0" mnemonicParsing="false" onAction="#addEvent" prefHeight="26.0" prefWidth="130.0" text="Add new event">
+                           <graphic>
+                              <ImageView fitHeight="13.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../utils/plusicon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <TableView fx:id="tableViewEvents" layoutX="417.0" layoutY="47.0" prefHeight="242.0" prefWidth="306.0">
+                          <columns>
+                            <TableColumn fx:id="tableColumnEventName" prefWidth="76.0" text="Name" />
+                            <TableColumn fx:id="tableColumnEventDescription" text="Description" />
+                              <TableColumn fx:id="tableColumnEventDate" prefWidth="90.0" text="Date" />
+                              <TableColumn fx:id="tableColumnEventTime" prefWidth="57.0" text="Time" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnSubscribe" layoutX="417.0" layoutY="301.0" mnemonicParsing="false" onAction="#addSubscription" prefHeight="26.0" prefWidth="130.0" text="Subscribe" />
+                         <Button fx:id="btnNextPage" layoutX="691.0" layoutY="301.0" mnemonicParsing="false" onAction="#nextPage">
+                           <graphic>
+                              <ImageView fitHeight="21.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../utils/rightarrowicon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                         <Button fx:id="btnPreviousPage" layoutX="646.0" layoutY="301.0" mnemonicParsing="false" onAction="#previousPage">
+                           <graphic>
+                              <ImageView fitHeight="21.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../utils/leftarrowicon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                         <TableView fx:id="tableViewSubscriptions" layoutX="14.0" layoutY="172.0" prefHeight="170.0" prefWidth="144.0">
+                          <columns>
+                            <TableColumn fx:id="tableColumnSubscriptionEventName" prefWidth="55.999969482421875" text="Event" />
+                            <TableColumn fx:id="tableColumnSubscriptionNotifications" prefWidth="84.00001525878906" text="Notifications" />
+                          </columns>
+                        </TableView>
+                        <Label fx:id="lblNotifications" layoutX="14.0" layoutY="359.0" prefHeight="22.0" prefWidth="734.0" style="-fx-alignment: center;" text="Notifications" textAlignment="CENTER">
+                           <effect>
+                              <Reflection bottomOpacity="0.28" topOpacity="0.39" />
+                           </effect></Label>
+                        <Button fx:id="btnUnsubscribe" layoutX="172.0" layoutY="268.0" mnemonicParsing="false" onAction="#deleteSubscription" prefHeight="26.0" prefWidth="130.0" text="Unsubscribe" />
+                        <Button fx:id="btnSwitchNotifications" layoutX="173.0" layoutY="229.0" mnemonicParsing="false" onAction="#switchNotifications" prefHeight="26.0" prefWidth="130.0" text="Notifications switch" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+            <GridPane fx:id="paneFriendRequests" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="403.0" prefWidth="763.0" style="-fx-background-color: #673d9c;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="393.6" minWidth="10.0" prefWidth="365.6" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="360.80000000000007" minWidth="10.0" prefWidth="360.80000000000007" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TableView fx:id="tableViewFriendshipRequests_Received" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="164.0" prefWidth="348.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                    <columns>
+                      <TableColumn fx:id="tableColumnIdFrom_Received" prefWidth="66.39996492862701" text="from" />
+                      <TableColumn fx:id="tableColumnIdTo_Received" prefWidth="79.20006561279297" text="to" />
+                        <TableColumn fx:id="tableColumnStatus_Received" prefWidth="72.0" text="status" />
+                        <TableColumn fx:id="tableColumnDate_Received" prefWidth="125.60011291503906" text="date" />
+                    </columns>
+                  </TableView>
+                  <Label text="Received friend requests" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                     <font>
+                        <Font name="Consolas Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tableViewFriendshipRequests_Sent" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="166.0" prefWidth="382.0" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <columns>
+                        <TableColumn fx:id="tableColumnIdFrom_Sent" prefWidth="80" text="from" />
+                        <TableColumn fx:id="tableColumnIdTo_Sent" prefWidth="80" text="to" />
+                        <TableColumn fx:id="tableColumnStatus_Sent" prefWidth="72.800048828125" text="status" />
+                        <TableColumn fx:id="tableColumnDate_Sent" prefWidth="134.4000244140625" text="date" />
+                     </columns>
+                  </TableView>
+                  <Label text="Sent friend requests" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                     <font>
+                        <Font name="Consolas Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane prefHeight="202.0" prefWidth="410.0">
+                     <children>
+                        <Button fx:id="deleteFriendshipRequestButton" layoutX="93.0" layoutY="148.0" mnemonicParsing="false" onAction="#deleteFriendshipRequest" prefHeight="26.0" prefWidth="178.0" text="Delete friend request">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../utils/deleteicon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                         <Button fx:id="sendFriendshipRequestButton" layoutX="93.0" layoutY="109.0" mnemonicParsing="false" onAction="#sendFriendshipRequest" prefHeight="26.0" prefWidth="178.0" text="Send friend request">
+                           <graphic>
+                              <ImageView fitHeight="56.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../utils/friendrequesticon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <Button fx:id="approveFriendshipRequestButton" layoutX="91.0" layoutY="111.0" mnemonicParsing="false" onAction="#approveFriendshipRequest" prefHeight="26.0" prefWidth="178.0" text="Approve friend request">
+                           <graphic>
+                              <ImageView fitHeight="14.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../utils/checkicon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button fx:id="rejectFriendshipRequestButton" layoutX="91.0" layoutY="149.0" mnemonicParsing="false" onAction="#rejectFriendshipRequest" prefHeight="26.0" prefWidth="178.0" text=" Reject friend request">
+                           <graphic>
+                              <ImageView fitHeight="14.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../utils/closeicon2.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+            <GridPane fx:id="paneFriends" style="-fx-background-color: #673d9c;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="365.8" minWidth="10.0" prefWidth="361.8" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="368.8000366210937" minWidth="10.0" prefWidth="365.6000000000001" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TableView fx:id="tableViewFriends" maxHeight="-Infinity" prefHeight="169.0" prefWidth="292.0" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                    <columns>
+                      <TableColumn fx:id="tableColumnLastName" prefWidth="179.20005798339844" text="Last name" />
+                      <TableColumn fx:id="tableColumnFirstName" prefWidth="183.20001220703125" text="First name" />
+                    </columns>
+                  </TableView>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="removeFriendButton" layoutX="207.0" layoutY="162.0" mnemonicParsing="false" onAction="#removeFriend" prefHeight="25.0" prefWidth="133.0" text="Remove friend">
+                           <graphic>
+                              <ImageView fitHeight="52.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../utils/deleteicon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button fx:id="btnNextPageFriend" layoutX="60.0" layoutY="162.0" mnemonicParsing="false" onAction="#nextPageFriend">
+                           <graphic>
+                              <ImageView fitHeight="21.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../utils/rightarrowicon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button fx:id="btnPreviousPageFriend" layoutX="10.0" layoutY="162.0" mnemonicParsing="false" onAction="#previousPageFriend">
+                           <graphic>
+                              <ImageView fitHeight="21.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../utils/leftarrowicon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                         <DatePicker fx:id="checkIn" layoutX="120.0" layoutY="68.0" prefWidth="150" promptText="Start date" />
+                         <DatePicker fx:id="checkOut" layoutX="120.0" layoutY="114.0" prefWidth="150" promptText="Final date" />
+                        <Label layoutX="167.0" layoutY="179.0" text="Reports">
+                           <font>
+                              <Font name="Consolas Bold Italic" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Label text="Friends" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                     <font>
+                        <Font name="Consolas Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <Button fx:id="chatHistoryButton" layoutX="127.0" layoutY="127.0" mnemonicParsing="false" onAction="#createChatHistoryReport" prefHeight="26.0" prefWidth="134.0" text="Chat History">
+                           <graphic>
+                              <ImageView fitHeight="17.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../utils/messageicon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                        <Button fx:id="historyButton" layoutX="127.0" layoutY="161.0" mnemonicParsing="false" onAction="#createHistoryReport" prefHeight="25.0" prefWidth="133.0" text="History ">
+                           <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../utils/historyicon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+         </children>
+      </StackPane>
+      <VBox prefHeight="453.0" prefWidth="150.0">
+         <children>
+            <ImageView fitHeight="161.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../utils/logosimplu.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnFriends" mnemonicParsing="false" onAction="#showFriendsPane" prefHeight="67.0" prefWidth="150.0" style="-fx-background-radius: 0;">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../utils/friendsicon.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="btnFriendRequests" mnemonicParsing="false" onAction="#showFriendRequestPane" prefHeight="67.0" prefWidth="196.0" style="-fx-background-radius: 0;">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../utils/friendrequesticon.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="btnMessages" mnemonicParsing="false" onAction="#chatRoomWindow" prefHeight="67.0" prefWidth="196.0" style="-fx-background-radius: 0;">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../utils/messagesicon.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="btnEvents" mnemonicParsing="false" onAction="#showEventsPane" prefHeight="67.0" prefWidth="196.0" style="-fx-background-radius: 0;">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../utils/eventicon.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#logOut" prefHeight="34.0" prefWidth="150.0" style="-fx-background-color: #643c9c;">
+               <graphic>
+                  <ImageView fitHeight="12.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../utils/logouticon.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+      </VBox>
+      <Label fx:id="loggedUser" layoutX="730.0" layoutY="14.0" prefHeight="22.0" prefWidth="121.0" text="Logged user">
+         <font>
+            <Font name="Consolas Bold" size="13.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Button fx:id="exitButton" layoutX="905.0" layoutY="13.0" mnemonicParsing="false" onAction="#exit" prefHeight="0.0" prefWidth="0.0">
+         <graphic>
+            <ImageView fitHeight="15.0" fitWidth="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../utils/closeicon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fitHeight="22.0" fitWidth="18.0" layoutX="700.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../utils/usericon.png" />
+         </image>
+         <effect>
+            <Glow />
+         </effect>
+      </ImageView>
+   </children>
+</AnchorPane>
