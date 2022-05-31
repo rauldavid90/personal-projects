@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="domain.Administrator" table="Administratori">
+
+        <id name="id" column="id" type="long">
+            <generator class="identity"/>
+        </id>
+
+        <property name="username" column="username" type="string" unique="true"/>
+
+        <property name="parola" column="parola" type="string"/>
+
+        <property name="nume" column="nume" type="string"/>
+
+        <property name="cnp" column="cnp" type="string"/>
+
+        <property name="nrTelefon" column="nrTelefon" type="string"/>
+    </class>
+</hibernate-mapping>

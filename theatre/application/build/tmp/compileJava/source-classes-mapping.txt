@@ -1,0 +1,63 @@
+repository/ILocRepository.java
+ repository.ILocRepository
+service/ServiceException.java
+ service.ServiceException
+repository/IClientRepository.java
+ repository.IClientRepository
+repository/ISpectacolRepository.java
+ repository.ISpectacolRepository
+repository/LocRepository.java
+ repository.LocRepository
+org/hibernate/dialect/identity/SQLiteDialect.java
+ org.hibernate.dialect.identity.SQLiteDialect
+ org.hibernate.dialect.identity.SQLiteDialect$1
+ org.hibernate.dialect.identity.SQLiteDialect$2
+ org.hibernate.dialect.identity.SQLiteDialect$3
+ org.hibernate.dialect.identity.SQLiteDialect$4
+ org.hibernate.dialect.identity.SQLiteDialect$SQLiteUniqueDelegate
+service/LocService.java
+ service.LocService
+domain/Spectacol.java
+ domain.Spectacol
+service/AdministratorService.java
+ service.AdministratorService
+domain/Stare.java
+ domain.Stare
+repository/SpectacolRepository.java
+ repository.SpectacolRepository
+utils/IObserver.java
+ utils.IObserver
+domain/Zona.java
+ domain.Zona
+utils/IObservable.java
+ utils.IObservable
+repository/IAdministratorRepository.java
+ repository.IAdministratorRepository
+repository/HibernateUtil.java
+ repository.HibernateUtil
+repository/ClientRepository.java
+ repository.ClientRepository
+domain/Client.java
+ domain.Client
+domain/Loc.java
+ domain.Loc
+org/hibernate/dialect/identity/SQLiteDialectIdentityColumnSupport.java
+ org.hibernate.dialect.identity.SQLiteDialectIdentityColumnSupport
+repository/AdministratorRepository.java
+ repository.AdministratorRepository
+service/ClientService.java
+ service.ClientService
+domain/Administrator.java
+ domain.Administrator
+service/SpectacolService.java
+ service.SpectacolService
+service/Service.java
+ service.Service
+Main.java
+ Main
+controller/LoginController.java
+ controller.LoginController
+controller/ClientController.java
+ controller.ClientController
+controller/AdministratorController.java
+ controller.AdministratorController

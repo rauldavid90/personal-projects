@@ -1,0 +1,101 @@
+.root{
+    -fx-background-color: #2A2A72;
+}
+
+VBox{
+    -fx-background-color: #2A2A72;
+}
+
+.text-field{
+    -fx-font-family: "Microsoft JhengHei Light";
+    -fx-font-size: 14;
+    -fx-padding: 1,1,1,1;
+    -fx-border-color: #FFA400;
+    -fx-border-width: 2;
+    -fx-border-radius: 1;
+    -fx-border: gone;
+    -fx-background-color: transparent;
+    -fx-text-fill: #FFA400;
+    -fx-prompt-text-fill: #FFA400;
+}
+
+.label{
+    -fx-font-family: "Microsoft JhengHei Light";
+    -fx-font-weight: bold;
+    -fx-border-width: 2;
+    -fx-border-radius: 1;
+    -fx-border: gone;
+    -fx-background-color: transparent;
+    -fx-text-fill: #FFA400;
+}
+
+.button{
+    -fx-font-family: "Microsoft JhengHei Light";
+    -fx-font-weight: bold;
+    -fx-background-color: #232528;
+    -fx-background-radius: 22;
+    -fx-text-fill: #FFA400;
+    -fx-font-size: 13;
+}
+.button:hover{
+    -fx-font-family: "Microsoft JhengHei Light";
+    -fx-font-weight: bold;
+    -fx-background-color: #50545A;
+    -fx-background-radius: 22;
+    -fx-text-fill: #FFA400;
+}
+.button:pressed{
+    -fx-scale-x: 0.90;
+}
+
+.toggle-button{
+    -fx-font-family: "Monospaced";
+    -fx-font-weight: bold;
+    -fx-background-color: grey;
+    -fx-text-fill: #FFA400;
+    -fx-font-size: 13;
+}
+.toggle-button:hover{
+    -fx-background-color: #50545A !important;
+}
+.toggle-button:selected{
+    -fx-background-color: #5050ea !important;
+}
+
+.table-view{
+    -fx-background-color: transparent;
+}
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+.table-view .column-header-background{
+    -fx-background-color: #232528
+}
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: #FFA400;
+    -fx-font-family: "System";
+    -fx-font-size: 13;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+.table-view .table-cell{
+    -fx-text-fill: #FFA400;
+    -fx-font-family: "System";
+    -fx-font-size: 13;
+}
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #2A2A72;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+.table-row-cell:selected {
+    -fx-background-color: #232528;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+.dialog-pane:header .header-panel {
+    -fx-background-color: #232528;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="258.0" prefWidth="192.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <TextField fx:id="tf_username" layoutX="15.0" layoutY="25.0" promptText="username" text="a" />
+      <Button fx:id="btn_login" layoutX="15.0" layoutY="218.0" mnemonicParsing="false" onAction="#handleLoginButton" prefHeight="26.0" prefWidth="162.0" text="Login" />
+      <CheckBox fx:id="cb_admin" layoutX="119.0" layoutY="95.0" mnemonicParsing="false" selected="true" text="Admin" textFill="#1c8f0a" />
+      <PasswordField fx:id="tf_parola" layoutX="15.0" layoutY="60.0" promptText="parola" text="a" />
+   </children>
+</AnchorPane>
