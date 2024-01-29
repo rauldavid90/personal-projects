@@ -8,6 +8,6 @@ I am using loopMidi to create virtual midi ports in order to create the connecti
 
 I successfully distributed this software to many users of LumiDMX by creating an executable containing all the libraries needed.
 
-The functionality of the software is presented in this [YouTube Video]([https://www.youtube.com/watch?v=1LRa_oV5eXA&t=25s]).
+The functionality of the software is presented in this YouTube video: https://www.youtube.com/watch?v=1LRa_oV5eXA&t=25s.
 
 <img width="1680" alt="Screenshot 2024-01-29 at 13 09 04" src="https://github.com/rauldavid90/personal-projects/assets/100197393/e794aa9c-9aa6-414d-a9b6-cfb3b6e83b9d">
